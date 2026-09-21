@@ -171,7 +171,14 @@ document.getElementById("allCats").innerHTML=cats.map(catCard).join("");
 render("homeProducts",products.slice(0,4));
 
 function openGame(){
-  window.open("https://cdn.jsdelivr.net/gh/thinhchung517-code/phu-kien-dien-tu@main/game.html", "_blank", "noopener");
+  const gameHTML = "<!-- Ultimate Game Stash file-->\n<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->\n<!DOCTYPE html>\n<html lang=\"en\">\n\t<head>\n\t\t<meta charset=\"utf-8\" />\n\t\t<meta name=\"format-detection\" content=\"telephone=no\">\n\t\t<meta name=\"HandheldFriendly\" content=\"true\" />\n\t\t<meta name=\"apple-mobile-web-app-capable\" content=\"yes\" />\n\t\t<meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\" />\n\t\t<meta name=\"apple-mobile-web-app-title\" content=\"Bubblez\">\n\t\t<meta id=\"viewport\" name=\"viewport\" content=\"width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui,shrink-to-fit=no\" />\n\t\t<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n\t\t<meta name=\"apple-mobile-web-app-title\" content=\"Fireboy and Watergirl 2 Light Temple\">\n\t\t<title>Fireboy & Watergirl 2 Light Temple</title>\n\t\t<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/assets/styles/main.css'>\n\t\t<script type=\"text/javascript\">\n\t\t\tvar gtag;\n\t\t</script>\n\t</head>\n\t<body style=\"margin: 0px; overflow: hidden\">\n\t\t<script type=\"text/javascript\">\n\t\t\twindow.requireNode = window.require;\n\t\t\twindow.require = undefined;\n\t\t</script>\n\t\t<script src=\"https://cdn.jsdelivr.net/gh/AlgebraHelper/AlgebraHelper@8e5a5b1d2b14aaf641c716af947c57609f52cf55/games/html5/fireboy-and-watergirl-2/play/bower_components/requirejs/require.js\"></script>\n\t\t<div id=\"root\">\n\t\t\t<div id=\"container\"></div>\n\t\t\t<div id=\"hammer\"></div>\n\t\t\t<div id=\"debug-fps\" style=\"color:#ff0000; position: absolute; top: 0;\"></div>\n\t\t</div>\n\t\t<script type=\"text/javascript\">\n\t\t\tfunction addScript(src, buster, callback) {\n\t\t\t\tvar s = document.createElement('script');\n\t\t\t\ts.setAttribute('src', src + '?v=' + buster);\n\t\t\t\tif (typeof callback === 'function') {\n\t\t\t\t\ts.onload = callback;\n\t\t\t\t}\n\t\t\t\tdocument.body.appendChild(s);\n\t\t\t}\n\t\t\tvar fbrqLA = false,\n\t\t\t\tfbrqBD = 0,\n\t\t\t\tplayBtn = true,\n\t\t\t\tfbrqSA = true,\n\t\t\t\tlibs = [],\n\t\t\t\tversion = '5';\n\t\t\trequire([\"https://cdn.jsdelivr.net/gh/bobydob/godotpack@137b954a7a2d8e0a28efe82a778000c02bcc1481/side/faw2/faw2.min.js?v=\" + version]);\n\t\t</script>\n\t</body>\n</html>";
+  const blob = new Blob([gameHTML], {type:"text/html;charset=utf-8"});
+  const gameURL = URL.createObjectURL(blob);
+  const gameWindow = window.open(gameURL, "_blank");
+  if(!gameWindow){
+    alert("Trình duyệt đã chặn cửa sổ game. Hãy cho phép popup cho trang này rồi bấm Game lại.");
+  }
+  setTimeout(() => URL.revokeObjectURL(gameURL), 60000);
 }
 </script>
 </body>

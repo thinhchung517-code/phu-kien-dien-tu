@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lunova - Phụ kiện điện tử</title>
+<title>LUNOVA - Phụ kiện điện tử</title>
 
 <style>
 * {
@@ -23,14 +23,16 @@ input {
     font: inherit;
 }
 
-/* THANH TRÊN */
+/* ================= TOP ================= */
+
 .top {
     background: #e50914;
     text-align: center;
     padding: 9px;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 .head {
     background: #111827;
     padding: 18px;
@@ -39,7 +41,7 @@ input {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 5;
+    z-index: 10;
 }
 
 .logo {
@@ -52,7 +54,8 @@ input {
     color: white;
 }
 
-/* TÌM KIẾM */
+/* ================= SEARCH ================= */
+
 .search {
     flex: 1;
     display: flex;
@@ -62,6 +65,7 @@ input {
     flex: 1;
     padding: 12px;
     border: 0;
+    outline: none;
 }
 
 .search button,
@@ -73,7 +77,13 @@ input {
     cursor: pointer;
 }
 
-/* MENU */
+.search button:hover,
+.btn:hover {
+    background: #ff2632;
+}
+
+/* ================= MENU ================= */
+
 nav {
     background: #171d27;
     display: flex;
@@ -95,7 +105,8 @@ nav button.active {
     background: #e50914;
 }
 
-/* MAIN */
+/* ================= MAIN ================= */
+
 main {
     max-width: 1150px;
     margin: auto;
@@ -111,7 +122,8 @@ main {
     display: block;
 }
 
-/* BANNER */
+/* ================= HERO ================= */
+
 .hero {
     padding: 55px 35px;
     border-radius: 16px;
@@ -121,6 +133,7 @@ main {
 
 .hero h1 {
     font-size: 42px;
+    margin-top: 0;
 }
 
 .hero span {
@@ -132,7 +145,8 @@ main {
     color: #ccd;
 }
 
-/* GRID */
+/* ================= GRID ================= */
+
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -143,12 +157,13 @@ main {
     grid-template-columns: repeat(5, 1fr);
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
 .card {
     background: #151b24;
     border: 1px solid #303846;
     border-radius: 12px;
-    padding: 18px;
+    overflow: hidden;
     cursor: pointer;
     transition: 0.2s;
 }
@@ -158,10 +173,12 @@ main {
     transform: translateY(-3px);
 }
 
-/* DANH MỤC */
+/* ================= CATEGORY ================= */
+
 .cat {
     text-align: center;
     font-size: 18px;
+    padding: 18px;
 }
 
 .icon {
@@ -169,23 +186,39 @@ main {
     margin-bottom: 10px;
 }
 
-/* SẢN PHẨM */
+/* ================= PRODUCT ================= */
+
 .product {
     padding: 0;
-    overflow: hidden;
 }
 
 .pic {
-    height: 150px;
-    background: #202733;
+    height: 190px;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
+    overflow: hidden;
+}
+
+.pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
 }
 
 .info {
     padding: 15px;
+}
+
+.info h3 {
+    margin: 0 0 8px;
+    min-height: 44px;
+}
+
+.info small {
+    color: #aaa;
 }
 
 .price {
@@ -205,12 +238,12 @@ main {
     cursor: pointer;
 }
 
-/* TIN CÔNG NGHỆ */
-.news {
-    line-height: 1.7;
+.add:hover {
+    background: #ff2632;
 }
 
-/* BOX */
+/* ================= BOX ================= */
+
 .box {
     background: #151b24;
     padding: 25px;
@@ -218,7 +251,39 @@ main {
     margin-bottom: 15px;
 }
 
-/* TỔNG TIỀN */
+.news {
+    line-height: 1.7;
+}
+
+/* ================= CART ================= */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background: white;
+    border-radius: 8px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.delete {
+    background: #e50914;
+    color: white;
+    border: 0;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
 .total {
     text-align: right;
     font-size: 23px;
@@ -226,7 +291,23 @@ main {
     margin-top: 20px;
 }
 
-/* FOOTER */
+/* ================= CONTACT ================= */
+
+.contact-input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+textarea.contact-input {
+    height: 100px;
+    resize: vertical;
+}
+
+/* ================= FOOTER ================= */
+
 footer {
     text-align: center;
     background: #080b10;
@@ -234,7 +315,8 @@ footer {
     color: #aaa;
 }
 
-/* THÔNG BÁO */
+/* ================= TOAST ================= */
+
 .toast {
     position: fixed;
     right: 20px;
@@ -243,11 +325,12 @@ footer {
     padding: 14px 20px;
     border-radius: 8px;
     display: none;
+    z-index: 100;
 }
 
-/* RESPONSIVE */
-@media(max-width:800px) {
+/* ================= RESPONSIVE ================= */
 
+@media (max-width: 900px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -255,7 +338,9 @@ footer {
     .cats {
         grid-template-columns: repeat(2, 1fr);
     }
+}
 
+@media (max-width: 800px) {
     .head {
         flex-wrap: wrap;
     }
@@ -270,10 +355,14 @@ footer {
     }
 }
 
-@media(max-width:500px) {
-
-    .grid {
+@media (max-width: 500px) {
+    .grid,
+    .cats {
         grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 35px 20px;
     }
 }
 </style>
@@ -281,35 +370,35 @@ footer {
 
 <body>
 
-<!-- THANH THÔNG BÁO -->
+<!-- ================= TOP ================= -->
+
 <div class="top">
     🚚 Miễn phí vận chuyển đơn từ 500.000đ |
     🔥 Flash Sale mỗi ngày
 </div>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <div class="head">
 
     <div class="logo">
         LUNO<b>VA</b>
     </div>
 
-    <!-- TÌM KIẾM -->
     <div class="search">
 
         <input
             id="q"
             placeholder="Tìm sản phẩm..."
-            onkeydown="if(event.key=='Enter')search()"
+            onkeydown="if(event.key === 'Enter') searchProducts()"
         >
 
-        <button onclick="search()">
+        <button onclick="searchProducts()">
             🔎
         </button>
 
     </div>
 
-    <!-- GIỎ HÀNG -->
     <button class="btn" onclick="page('cart')">
         🛒 Giỏ hàng
         (<span id="count">0</span>)
@@ -317,45 +406,45 @@ footer {
 
 </div>
 
-<!-- MENU -->
+<!-- ================= MENU ================= -->
+
 <nav>
 
-    <button
-        class="active"
-        onclick="page('home')">
+    <button class="active" onclick="page('home', this)">
         🏠 Trang chủ
     </button>
 
-    <button onclick="page('categories')">
+    <button onclick="page('categories', this)">
         📂 Danh mục
     </button>
 
-    <button onclick="page('products')">
+    <button onclick="page('products', this)">
         🛒 Sản phẩm
     </button>
 
-    <button onclick="page('sale')">
+    <button onclick="page('sale', this)">
         🔥 Khuyến mãi
     </button>
 
-    <button onclick="page('news')">
+    <button onclick="page('news', this)">
         📰 Tin công nghệ
     </button>
 
-    <button onclick="page('contact')">
+    <button onclick="page('contact', this)">
         📞 Liên hệ
     </button>
 
-    <button onclick="page('cart')">
+    <button onclick="page('cart', this)">
         🛒 Giỏ hàng
     </button>
 
 </nav>
 
+<!-- ================= MAIN ================= -->
 
 <main>
 
-<!-- ================= TRANG CHỦ ================= -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="page active">
 
@@ -374,28 +463,23 @@ footer {
 
         <button
             class="btn"
-            onclick="page('products')">
-
+            onclick="page('products')"
+        >
             MUA SẮM NGAY →
-
         </button>
 
     </div>
 
-
-    <h2>
-        Danh mục nổi bật
-    </h2>
+    <h2>Danh mục nổi bật</h2>
 
     <div
         id="homeCats"
         class="grid cats">
     </div>
 
+    <br>
 
-    <h2>
-        Sản phẩm nổi bật
-    </h2>
+    <h2>Sản phẩm nổi bật</h2>
 
     <div
         id="homeProducts"
@@ -404,16 +488,11 @@ footer {
 
 </section>
 
+<!-- ================= CATEGORY ================= -->
 
-<!-- ================= DANH MỤC ================= -->
+<section id="categories" class="page">
 
-<section
-    id="categories"
-    class="page">
-
-    <h2>
-        📂 Danh mục
-    </h2>
+    <h2>📂 Danh mục</h2>
 
     <div
         id="cats"
@@ -422,16 +501,11 @@ footer {
 
 </section>
 
+<!-- ================= PRODUCTS ================= -->
 
-<!-- ================= SẢN PHẨM ================= -->
+<section id="products" class="page">
 
-<section
-    id="products"
-    class="page">
-
-    <h2>
-        🛒 Tất cả sản phẩm
-    </h2>
+    <h2>🛒 Tất cả sản phẩm</h2>
 
     <div
         id="list"
@@ -440,16 +514,11 @@ footer {
 
 </section>
 
+<!-- ================= SALE ================= -->
 
-<!-- ================= KHUYẾN MÃI ================= -->
+<section id="sale" class="page">
 
-<section
-    id="sale"
-    class="page">
-
-    <h2>
-        🔥 Khuyến mãi
-    </h2>
+    <h2>🔥 Khuyến mãi</h2>
 
     <div
         id="sales"
@@ -458,80 +527,67 @@ footer {
 
 </section>
 
+<!-- ================= NEWS ================= -->
 
-<!-- ================= TIN CÔNG NGHỆ ================= -->
+<section id="news" class="page">
 
-<section
-    id="news"
-    class="page">
-
-    <h2>
-        📰 Tin công nghệ
-    </h2>
-
+    <h2>📰 Tin công nghệ</h2>
 
     <div class="box news">
 
-        <h3>
-            ⌨️ Xu hướng bàn phím cơ gaming
-        </h3>
+        <h3>⌨️ Xu hướng bàn phím cơ gaming</h3>
 
         <p>
-            Bàn phím cơ ngày càng phổ biến
-            nhờ cảm giác gõ tốt và khả năng
-            tùy biến cao.
+            Bàn phím cơ ngày càng phổ biến nhờ cảm giác
+            gõ tốt, thiết kế đẹp và khả năng tùy biến cao.
         </p>
 
     </div>
 
-
     <div class="box news">
 
-        <h3>
-            🖱️ Chuột gaming nhẹ lên ngôi
-        </h3>
+        <h3>🖱️ Chuột gaming nhẹ lên ngôi</h3>
 
         <p>
-            Chuột nhẹ, cảm biến chính xác
-            và polling rate cao là xu hướng
-            được game thủ quan tâm.
+            Chuột gaming trọng lượng nhẹ, cảm biến chính xác
+            và polling rate cao đang được nhiều game thủ quan tâm.
         </p>
 
     </div>
 
+    <div class="box news">
+
+        <h3>🎧 Tai nghe không dây</h3>
+
+        <p>
+            Công nghệ chống ồn, độ trễ thấp và thời lượng
+            pin dài đang ngày càng được cải thiện.
+        </p>
+
+    </div>
 
     <div class="box news">
 
-        <h3>
-            🎧 Tai nghe không dây
-        </h3>
+        <h3>🔌 Công nghệ sạc GaN</h3>
 
         <p>
-            Công nghệ chống ồn, độ trễ thấp
-            và pin dài đang được cải thiện mạnh.
+            Các củ sạc GaN có kích thước nhỏ gọn nhưng
+            vẫn cung cấp công suất sạc cao cho nhiều thiết bị.
         </p>
 
     </div>
 
 </section>
 
+<!-- ================= CONTACT ================= -->
 
-<!-- ================= LIÊN HỆ ================= -->
+<section id="contact" class="page">
 
-<section
-    id="contact"
-    class="page">
-
-    <h2>
-        📞 Liên hệ
-    </h2>
-
+    <h2>📞 Liên hệ</h2>
 
     <div class="box">
 
-        <h3>
-             - Phụ kiện điện tử
-        </h3>
+        <h3>LUNOVA - Phụ kiện điện tử</h3>
 
         <p>
             📍 123 Đường Lê Đức Thọ,
@@ -552,51 +608,42 @@ footer {
 
     </div>
 
-
     <div class="box">
 
         <input
             id="name"
+            class="contact-input"
             placeholder="Họ và tên"
-            style="width:100%;padding:12px;margin:5px 0"
         >
 
         <input
             id="email"
+            class="contact-input"
             placeholder="Email"
-            style="width:100%;padding:12px;margin:5px 0"
         >
 
         <textarea
-            placeholder="Nội dung"
-            style="width:100%;height:100px;padding:12px;margin:5px 0">
-        </textarea>
+            class="contact-input"
+            placeholder="Nội dung"></textarea>
 
         <button
             class="btn"
-            onclick="toast('Đã gửi liên hệ!')">
-
+            onclick="toast('Đã gửi liên hệ!')"
+        >
             Gửi liên hệ
-
         </button>
 
     </div>
 
 </section>
 
+<!-- ================= CART ================= -->
 
-<!-- ================= GIỎ HÀNG ================= -->
+<section id="cart" class="page">
 
-<section
-    id="cart"
-    class="page">
+    <h2>🛒 Giỏ hàng</h2>
 
-    <h2>
-        🛒 Giỏ hàng
-    </h2>
-
-    <div id="cart">
-    </div>
+    <div id="cartList"></div>
 
     <div
         id="total"
@@ -607,13 +654,11 @@ footer {
 
 </main>
 
-
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    LUNOVA -
-    Website bán phụ kiện điện tử
+    LUNOVA - Website bán phụ kiện điện tử
 
     <br><br>
 
@@ -621,8 +666,7 @@ footer {
 
 </footer>
 
-
-<!-- THÔNG BÁO -->
+<!-- ================= TOAST ================= -->
 
 <div
     id="toast"
@@ -632,154 +676,116 @@ footer {
 
 <script>
 
-/* ==============================
+/* ==================================================
    DANH SÁCH SẢN PHẨM
-   p[4] = đường dẫn hình ảnh sản phẩm
-   Đặt ảnh vào thư mục: images/
-================================ */
+
+   QUAN TRỌNG:
+   Tạo thư mục "images" trên GitHub và upload ảnh
+   đúng tên file bên dưới.
+================================================== */
 
 const P = [
 
-    [
-        1,
-        'Rainy75 Pro',
-        'Bàn phím',
-        2490000,
-        'images/rainy75-pro.jpg',
-        1
-    ],
+    {
+        id: 1,
+        name: "Rainy 75",
+        category: "Bàn phím",
+        price: 2490000,
+        image: "images/rainy75.webp",
+        sale: true
+    },
 
-    [
-        2,
-        'Zen65 Mechanical',
-        'Bàn phím',
-        1890000,
-        'images/zen65-mechanical.jpg',
-        1
-    ],
+    {
+        id: 2,
+        name: "Mchose G75 V2",
+        category: "Bàn phím",
+        price: 1890000,
+        image: "images/mchose-g75-v2.webp",
+        sale: true
+    },
 
-    [
-        3,
-        'MCHOSE G3 V2',
-        'Chuột',
-        990000,
-        'images/mchose-g3-v2.jpg',
-        1
-    ],
+    {
+        id: 3,
+        name: "Rawm Leviathan V4",
+        category: "Chuột",
+        price: 1290000,
+        image: "images/rawm-leviathan-v4.webp",
+        sale: true
+    },
 
-    [
-        4,
-        'ATK Blazing X1 V2',
-        'Chuột',
-        1290000,
-        'images/atk-blazing-x1-v2.jpg',
-        1
-    ],
+    {
+        id: 4,
+        name: "Mchose A7 Ultra",
+        category: "Chuột",
+        price: 990000,
+        image: "images/mchose-a7-ultra.webp",
+        sale: true
+    },
 
-    [
-        5,
-        'Tai Nghe Tangzu Waner SG 2 ',
-        'Tai nghe',
-        500000,
-        'C:\Users\Thinh\OneDrive\4146_tai_nghe_tangzu_waner_sg_2_songlongmedia__5_.jpg',
-        1
-    ],
+    {
+        id: 5,
+        name: "Ugreen HiTune Max5c",
+        category: "Tai nghe",
+        price: 690000,
+        image: "images/ugreen-hitune-max5c.jpg",
+        sale: true
+    },
 
-    [
-        6,
-        'Havit H668BT',
-        'Tai nghe',
-        690000,
-        'images/havit-h668bt.jpg',
-        0
-    ],
+    {
+        id: 6,
+        name: "Tangzu WANER SG 2 Red Lion",
+        category: "Tai nghe",
+        price: 500000,
+        image: "images/tangzu-waner-sg2.webp",
+        sale: true
+    },
 
-    [
-        7,
-        'Anker Nano 45W',
-        'Củ sạc',
-        790000,
-        'images/anker-nano-45w.jpg',
-        1
-    ],
+    {
+        id: 7,
+        name: "Anker Nano 45W Smart",
+        category: "Củ sạc",
+        price: 790000,
+        image: "images/anker-nano-45w-smart.webp",
+        sale: true
+    },
 
-    [
-        8,
-        'UGREEN Nexode 65W',
-        'Củ sạc',
-        990000,
-        'images/ugreen-nexode-65w.jpg',
-        0
-    ],
-
-    [
-        9,
-        'Gaming Mousepad RGB',
-        'Phụ kiện',
-        390000,
-        'images/gaming-mousepad-rgb.jpg',
-        1
-    ],
-
-    [
-        10,
-        'USB-C Hub 7 in 1',
-        'Phụ kiện',
-        590000,
-        'images/usb-c-hub-7-in-1.jpg',
-        0
-    ],
-
-    [
-        11,
-        'Webcam Full HD',
-        'Phụ kiện',
-        550000,
-        'images/webcam-full-hd.jpg',
-        1
-    ],
-
-    [
-        12,
-        'Giá đỡ tai nghe RGB',
-        'Phụ kiện',
-        320000,
-        'images/gia-do-tai-nghe-rgb.jpg',
-        0
-    ]
+    {
+        id: 8,
+        name: "Ugreen Nexode Air 65W",
+        category: "Củ sạc",
+        price: 990000,
+        image: "images/ugreen-nexode-air-65w.webp",
+        sale: true
+    }
 
 ];
 
 
-/* GIỎ HÀNG */
+/* ================= CATEGORY ================= */
+
+const cats = [
+    "Bàn phím",
+    "Chuột",
+    "Tai nghe",
+    "Củ sạc"
+];
+
+
+/* ================= CART ================= */
 
 let cart = [];
 
 
-/* DANH MỤC */
-
-const cats = [
-    'Bàn phím',
-    'Chuột',
-    'Tai nghe',
-    'Củ sạc',
-    'Phụ kiện'
-];
-
-
-/* ==============================
-   TẠO CARD DANH MỤC
-================================ */
+/* ================= CATEGORY CARD ================= */
 
 function cat(c) {
 
     const icons = {
 
-        'Bàn phím': '⌨️',
-        'Chuột': '🖱️',
-        'Tai nghe': '🎧',
-        'Củ sạc': '🔌',
-        'Phụ kiện': '🎮'
+        "Bàn phím": "⌨️",
+        "Chuột": "🖱️",
+        "Tai nghe": "🎧",
+        "Củ sạc": "🔌"
 
     };
 
@@ -787,7 +793,8 @@ function cat(c) {
 
         <div
             class="card cat"
-            onclick="filter('${c}')">
+            onclick="filterCategory('${c}')"
+        >
 
             <div class="icon">
                 ${icons[c]}
@@ -800,12 +807,11 @@ function cat(c) {
         </div>
 
     `;
+
 }
 
 
-/* ==============================
-   TẠO CARD SẢN PHẨM
-================================ */
+/* ================= PRODUCT CARD ================= */
 
 function card(p) {
 
@@ -814,29 +820,35 @@ function card(p) {
         <div class="card product">
 
             <div class="pic">
-                ${p[4]}
+
+                <img
+                    src="${p.image}"
+                    alt="${p.name}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.parentElement.innerHTML='📷 Ảnh sản phẩm';"
+                >
+
             </div>
 
             <div class="info">
 
                 <h3>
-                    ${p[1]}
+                    ${p.name}
                 </h3>
 
                 <small>
-                    ${p[2]}
+                    ${p.category}
                 </small>
 
                 <div class="price">
-                    ${p[3].toLocaleString('vi-VN')}đ
+                    ${p.price.toLocaleString("vi-VN")}đ
                 </div>
 
                 <button
                     class="add"
-                    onclick="add(${p[0]})">
-
+                    onclick="add(${p.id})"
+                >
                     🛒 Thêm vào giỏ
-
                 </button>
 
             </div>
@@ -844,175 +856,231 @@ function card(p) {
         </div>
 
     `;
+
 }
 
 
-/* ==============================
-   CHUYỂN TRANG
-================================ */
+/* ================= PAGE ================= */
 
-function page(id) {
+function page(id, button = null) {
 
     document
-        .querySelectorAll('.page')
-        .forEach(x =>
-            x.classList.remove('active')
-        );
+        .querySelectorAll(".page")
+        .forEach(x => {
+
+            x.classList.remove("active");
+
+        });
 
     document
         .getElementById(id)
-        .classList.add('active');
+        .classList.add("active");
 
-    window.scrollTo(0, 0);
 
-    if (id === 'cart') {
+    document
+        .querySelectorAll("nav button")
+        .forEach(x => {
+
+            x.classList.remove("active");
+
+        });
+
+
+    if (button) {
+
+        button.classList.add("active");
+
+    }
+
+
+    if (id === "products") {
+
+        render(P);
+
+    }
+
+
+    if (id === "cart") {
 
         renderCart();
 
     }
 
-}
 
-
-/* ==============================
-   HIỂN THỊ SẢN PHẨM
-================================ */
-
-function render(a) {
-
-    document
-        .getElementById('list')
-        .innerHTML =
-        a.length
-        ? a.map(card).join('')
-        : '<p>Không tìm thấy sản phẩm.</p>';
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 
-/* ==============================
-   LỌC THEO DANH MỤC
-================================ */
+/* ================= RENDER PRODUCTS ================= */
 
-function filter(c) {
+function render(products) {
 
-    page('products');
+    const list =
+        document.getElementById("list");
 
-    render(
+    if (!products.length) {
+
+        list.innerHTML =
+            "<p>Không tìm thấy sản phẩm.</p>";
+
+        return;
+
+    }
+
+    list.innerHTML =
+        products
+        .map(card)
+        .join("");
+
+}
+
+
+/* ================= FILTER ================= */
+
+function filterCategory(category) {
+
+    page("products");
+
+    const result =
         P.filter(
-            x => x[2] == c
-        )
-    );
+            product =>
+                product.category === category
+        );
+
+    render(result);
 
 }
 
 
-/* ==============================
-   TÌM KIẾM
-================================ */
+/* ================= SEARCH ================= */
 
-function search() {
+function searchProducts() {
 
-    let q =
+    const q =
         document
-        .getElementById('q')
+        .getElementById("q")
         .value
+        .trim()
         .toLowerCase();
 
-    page('products');
 
-    render(
+    page("products");
 
-        P.filter(
 
-            x =>
-                (x[1] + ' ' + x[2])
-                .toLowerCase()
-                .includes(q)
+    const result =
+        P.filter(product => {
 
-        )
+            const text =
+                (
+                    product.name +
+                    " " +
+                    product.category
+                )
+                .toLowerCase();
 
-    );
+            return text.includes(q);
+
+        });
+
+
+    render(result);
 
 }
 
 
-/* ==============================
-   THÊM VÀO GIỎ
-================================ */
+/* ================= ADD CART ================= */
 
 function add(id) {
 
-    let x =
-        cart.find(
-            a => a[0] == id
+    const product =
+        P.find(
+            p => p.id === id
         );
 
 
-    if (x) {
+    const item =
+        cart.find(
+            p => p.id === id
+        );
 
-        x[5]++;
+
+    if (item) {
+
+        item.quantity++;
 
     }
 
     else {
 
-        let p =
-            P.find(
-                a => a[0] == id
-            );
+        cart.push({
 
-        cart.push(
-            [...p, 1]
-        );
+            ...product,
+
+            quantity: 1
+
+        });
 
     }
 
 
-    update();
+    updateCartCount();
 
     toast(
-        'Đã thêm sản phẩm vào giỏ!'
+        "Đã thêm " +
+        product.name +
+        " vào giỏ!"
     );
 
 }
 
 
-/* ==============================
-   CẬP NHẬT SỐ LƯỢNG
-================================ */
+/* ================= CART COUNT ================= */
 
-function update() {
+function updateCartCount() {
 
-    document
-        .getElementById('count')
-        .textContent =
+    const count =
         cart.reduce(
-            (s, x) => s + x[5],
+            (sum, item) =>
+                sum + item.quantity,
             0
         );
+
+
+    document
+        .getElementById("count")
+        .textContent = count;
 
 }
 
 
-/* ==============================
-   HIỂN THỊ GIỎ HÀNG
-================================ */
+/* ================= RENDER CART ================= */
 
 function renderCart() {
 
-    let e =
-        document.getElementById('cart');
+    const container =
+        document.getElementById("cartList");
+
+
+    const total =
+        document.getElementById("total");
+
 
     if (!cart.length) {
 
-        e.innerHTML = `
+        container.innerHTML = `
 
             <div
                 class="box"
-                style="text-align:center">
+                style="text-align:center"
+            >
 
-                🛒
+                <div style="font-size:50px">
+                    🛒
+                </div>
 
                 <h3>
                     Giỏ hàng đang trống
@@ -1020,163 +1088,210 @@ function renderCart() {
 
                 <button
                     class="btn"
-                    onclick="page('products')">
-
+                    onclick="page('products')"
+                >
                     Xem sản phẩm
-
                 </button>
 
             </div>
 
         `;
 
-        document
-            .getElementById('total')
-            .innerHTML = '';
+
+        total.innerHTML = "";
 
         return;
 
     }
 
 
-    let sum = 0;
+    container.innerHTML =
+        cart
+        .map(item => `
 
+            <div class="box cart-item">
 
-    e.innerHTML = cart.map(x => {
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
 
-        sum += x[3] * x[5];
+                <div class="cart-info">
 
-        return `
+                    <b>
+                        ${item.name}
+                    </b>
 
-            <div class="box">
+                    <br><br>
 
-                <b>
-                    ${x[4]}
-                    ${x[1]}
-                </b>
+                    ${item.price.toLocaleString("vi-VN")}đ
 
-                —
+                    × ${item.quantity}
 
-                ${x[3].toLocaleString('vi-VN')}đ
-
-                × ${x[5]}
+                </div>
 
                 <button
-                    onclick="del(${x[0]})"
-                    style="float:right">
-
+                    class="delete"
+                    onclick="removeItem(${item.id})"
+                >
                     Xóa
-
                 </button>
 
             </div>
 
-        `;
+        `)
+        .join("");
 
-    }).join('');
+
+    const sum =
+        cart.reduce(
+
+            (total, item) =>
+                total +
+                item.price *
+                item.quantity,
+
+            0
+
+        );
 
 
-    document
-        .getElementById('total')
-        .innerHTML = `
+    total.innerHTML = `
 
-            Tổng tiền:
+        Tổng tiền:
 
-            <b>
-                ${sum.toLocaleString('vi-VN')}đ
-            </b>
+        <b>
+            ${sum.toLocaleString("vi-VN")}đ
+        </b>
 
-            <br><br>
+        <br><br>
 
-            <button
-                class="btn"
-                onclick="
-                    toast('Thanh toán thành công! (Demo)')
-                ">
+        <button
+            class="btn"
+            onclick="checkout()"
+        >
+            Thanh toán
+        </button>
 
-                Thanh toán
-
-            </button>
-
-        `;
+    `;
 
 }
 
 
-/* ==============================
-   XÓA SẢN PHẨM
-================================ */
+/* ================= REMOVE ================= */
 
-function del(id) {
+function removeItem(id) {
 
     cart =
         cart.filter(
-            x => x[0] != id
+            item =>
+                item.id !== id
         );
 
-    update();
+
+    updateCartCount();
 
     renderCart();
 
 }
 
 
-/* ==============================
-   THÔNG BÁO
-================================ */
+/* ================= CHECKOUT ================= */
 
-function toast(s) {
+function checkout() {
 
-    let t =
-        document.getElementById('toast');
+    if (!cart.length) {
 
-    t.textContent = s;
+        toast(
+            "Giỏ hàng đang trống!"
+        );
 
-    t.style.display = 'block';
+        return;
+
+    }
+
+
+    toast(
+        "Thanh toán thành công! (Demo)"
+    );
+
+
+    cart = [];
+
+    updateCartCount();
+
+    renderCart();
+
+}
+
+
+/* ================= TOAST ================= */
+
+function toast(message) {
+
+    const t =
+        document.getElementById("toast");
+
+
+    t.textContent =
+        message;
+
+
+    t.style.display =
+        "block";
+
 
     setTimeout(
-        () => t.style.display = 'none',
+        () => {
+
+            t.style.display =
+                "none";
+
+        },
+
         2200
+
     );
 
 }
 
 
-/* ==============================
-   KHỞI TẠO WEBSITE
-================================ */
+/* ================= INITIALIZE ================= */
 
 document
-    .getElementById('cats')
+    .getElementById("cats")
     .innerHTML =
-    cats.map(cat).join('');
+    cats
+    .map(cat)
+    .join("");
 
 
 document
-    .getElementById('homeCats')
+    .getElementById("homeCats")
     .innerHTML =
-    cats.map(cat).join('');
+    cats
+    .map(cat)
+    .join("");
+
+
+document
+    .getElementById("homeProducts")
+    .innerHTML =
+    P
+    .map(card)
+    .join("");
+
+
+document
+    .getElementById("sales")
+    .innerHTML =
+    P
+    .filter(product => product.sale)
+    .map(card)
+    .join("");
 
 
 render(P);
-
-
-document
-    .getElementById('homeProducts')
-    .innerHTML =
-    P.slice(0, 4)
-    .map(card)
-    .join('');
-
-
-document
-    .getElementById('sales')
-    .innerHTML =
-    P.filter(
-        x => x[5]
-    )
-    .map(card)
-    .join('');
 
 </script>
 
